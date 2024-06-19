@@ -2,7 +2,6 @@
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";
-import { fancyAccordionInput } from "./accordion-input";
 import { Route } from "next";
 import { FancyAccordionItem } from "./fancy-accordion-item";
 
@@ -14,7 +13,13 @@ export type FancyAccordionItem = {
   title: string;
 };
 
-export const FancyAccordion = ({ title }: { title: string }) => {
+export const FancyAccordion = ({
+  title,
+  input,
+}: {
+  title: string;
+  input: FancyAccordionItem[];
+}) => {
   const [openedItem, setOpenedItem] = useState(1);
 
   return (
@@ -25,7 +30,7 @@ export const FancyAccordion = ({ title }: { title: string }) => {
         </h3>
       </div>
       <div className="flex flex-col gap-2 md:flex-row">
-        {fancyAccordionInput.map((item) => (
+        {input.map((item) => (
           <div
             key={item.id}
             onClick={() => setOpenedItem(item.id)}

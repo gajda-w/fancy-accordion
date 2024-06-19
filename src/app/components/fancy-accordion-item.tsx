@@ -37,7 +37,6 @@ export const FancyAccordionItem = ({
           }
         )}
       >
-        <div className="h-16 w-16 rounded-full bg-darkGray" />
         <h3
           className={cn(
             "mb-2 inline-block w-20 scale-75 text-lg font-bold leading-6 transition-all duration-500 md:mb-6 md:w-16 md:rotate-90 md:text-4xl md:leading-10",
